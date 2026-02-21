@@ -9,8 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const containerRef = useRef(null);
-  const cursorRef = useRef(null);
-  const heroImageRef = useRef(null);
 
   const [time, setTime] = useState(
     new Date().toLocaleTimeString("en-DZ", {
@@ -61,17 +59,6 @@ function App() {
           "-=1.5"
         );
 
-      // Hero Parallax
-      gsap.to(heroImageRef.current, {
-        yPercent: 30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero-section",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
 
       // Headers Fade In
       const sectionHeadings = gsap.utils.toArray(".section-heading");
@@ -263,42 +250,70 @@ function App() {
       </nav>
 
       {/* HERO Sect */}
-      <section className="hero-section h-screen w-full relative overflow-hidden flex flex-col justify-end px-4 pb-12 md:px-12">
-        <div className="absolute inset-0 z-0">
-          <div
-            ref={heroImageRef}
-            className="w-full h-[120%] -top-[10%] relative"
-          >
-            <div className="absolute top-1/4 right-[10%] w-[50vw] aspect-square bg-accent/15 rounded-full filter blur-[50px] mix-blend-multiply animate-[spin_25s_ease-in-out_infinite_alternate] transform-gpu pointer-events-none origin-bottom-left"></div>
+      <section className="hero-section min-h-[100svh] w-full relative overflow-hidden flex flex-col justify-between px-4 pt-28 pb-10 md:px-12 md:pt-32 md:pb-12">
 
-            <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/40 to-transparent"></div>
-          </div>
+        {/* Ghost outline text — desktop only, sits behind everything */}
+        <div className="hidden md:block absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+          <span
+            className="hero-line absolute right-[5%] bottom-[8%] font-display font-bold text-[18vw] leading-none tracking-tighter uppercase"
+            style={{ WebkitTextStroke: '1px rgba(13,13,13,0.08)', color: 'transparent' }}
+          >
+            TAREB
+          </span>
         </div>
 
-        <div className="relative z-10 w-full flex flex-col items-center md:items-start text-center md:text-left">
-          <h1 className="font-display font-bold text-[clamp(4rem,15vw,16rem)] leading-[0.8] tracking-tighter uppercase inline-block mx-auto md:mx-0">
-            <div className="overflow-hidden p-2">
+        {/* Subtle horizontal rule across the hero */}
+        <div className="absolute left-0 right-0 bottom-[35%] md:bottom-[38%] z-0 pointer-events-none">
+          <div className="hero-line w-full h-[1px] bg-ink/5"></div>
+        </div>
+
+        {/* TOP — spacer area (navbar lives here via absolute positioning) */}
+        <div className="flex-shrink-0"></div>
+
+        {/* MIDDLE — main name block, vertically centered */}
+        <div className="relative z-10 flex-1 flex flex-col justify-center">
+          <h1 className="font-display font-bold text-[clamp(3.2rem,13vw,13rem)] leading-[0.85] tracking-tighter uppercase">
+            <div className="overflow-hidden">
               <span className="hero-line block text-accent">Djillali</span>
             </div>
-            <div className="overflow-hidden p-2 -mt-[2%] md:-mt-[4%]">
+            <div className="overflow-hidden -mt-[1%] md:-mt-[2%]">
               <span className="hero-line block">Tareb</span>
             </div>
           </h1>
 
-          <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-end mt-8 border-t-2 border-ink/30 pt-4">
-            <div className="overflow-hidden">
-              <p className="hero-line font-body text-xl md:text-2xl max-w-xl text-ink/80 mb-4 md:mb-0">
-                CS student, web developer &{" "}
-                <span className="text-accent italic font-semibold">
-                  automation builder.
-                </span>
-              </p>
+          {/* Role description — directly under the name */}
+          <div className="overflow-hidden mt-6 md:mt-10">
+            <p className="hero-line font-body text-base md:text-xl max-w-md text-ink/60 leading-relaxed">
+              CS student, web developer &{" "}
+              <span className="text-accent font-semibold">
+                automation builder.
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* BOTTOM — meta strip pinned to the bottom */}
+        <div className="relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4 flex-shrink-0">
+          {/* Availability */}
+          <div className="overflow-hidden">
+            <div className="hero-line flex items-center gap-2.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+              <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-ink/40">
+                Available for projects — Algeria
+              </span>
             </div>
-            <div className="overflow-hidden">
-              <div className="hero-line font-mono text-xs md:text-sm uppercase tracking-widest text-ink/60 flex flex-col md:text-right">
-                <span>Available for projects — Algeria</span>
-                <span className="mt-1">LOCAL TIME: {time}</span>
+          </div>
+
+          {/* Time + Scroll cue */}
+          <div className="overflow-hidden flex items-center gap-8">
+            <span className="hero-line font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-ink/40">
+              {time}
+            </span>
+            <div className="hero-line hidden md:flex items-center gap-2 text-ink/25">
+              <div className="w-[1px] h-8 bg-ink/15 relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full bg-accent animate-[scrollLine_2s_ease-in-out_infinite]"></div>
               </div>
+              <span className="font-mono text-[9px] uppercase tracking-[0.3em]">Scroll</span>
             </div>
           </div>
         </div>

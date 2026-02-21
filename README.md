@@ -5,8 +5,8 @@
 ### Frontend Developer who turns ideas into pixel-perfect, animated experiences.
 
 [![Portfolio](https://img.shields.io/badge/🌐_Live_Site-djillali--tareb.netlify.app-6D28D9?style=for-the-badge)](https://djillali-tareb.netlify.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Let's_Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_LINKEDIN)
-[![Email](https://img.shields.io/badge/Email-Say_Hello-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Let's_Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/djillali-tareb-b47040361/)
+[![Email](https://img.shields.io/badge/Email-Say_Hello-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:djitrb100@gmail.com)
 
 </div>
 

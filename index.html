@@ -1,48 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Djillali Tareb | Frontend Developer Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Djillali Tareb | CS Student & Web Developer</title>
+  <meta name="description" content="Portfolio of Djillali Tareb." />
+  <link rel="icon" href="src/assets/svg/face1.svg" type="image/x-icon" />
 
-    <meta
-      name="description"
-      content="Welcome to my Portfolio. Here i showcase my frontend projects, skills, and passion for modern web development."
-    />
-    <meta
-      name="keywords"
-      content="Djillali Tareb, frontend developer, web developer, portfolio, JavaScript, React, HTML, CSS, Tailwind, frontend projects, UI design, responsive design, modern websites, programming, code, software engineering"
-    />
-    <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400..800&display=swap"
+    rel="stylesheet">
+</head>
 
-    <meta
-      property="og:title"
-      content="Djillali Tareb | Frontend Developer Portfolio"
-    />
-    <meta
-      property="og:description"
-      content="Welcome to my Portfolio. Here i showcase my frontend projects, skills, and passion for modern web development."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="src/assets/svg/face1.svg" />
-    <meta property="og:url" content="https://djillali-tareb.netlify.app/" />
+<body>
+  <!-- CSS Noise Overlay -->
+  <div class="pointer-events-none fixed inset-0 z-[9999] h-screen w-screen opacity-[0.05] mix-blend-overlay"
+    style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');">
+  </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Djillali Tareb | Frontend Developer Portfolio"
-    />
-    <meta
-      name="twitter:description"
-      content="Check out my work as a frontend developer. I'm passionate about building clean, responsive, and engaging web apps."
-    />
-    <meta name="twitter:image" content="src/assets/svg/face1.svg" />
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 
-    <link rel="icon" href="src/assets/svg/face1.svg" type="image/x-icon" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
 </html>
